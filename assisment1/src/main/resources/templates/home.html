@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Company_group_list</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+	
+    <link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
+
+
+    <style>
+        .navbar{
+            background-color: rgb(96, 0, 128);
+        
+        }
+body{
+    background-color:lightyellow;
+}
+li:hover {
+        color: blueviolet !important;
+        font-size: larges;
+    }
+
+
+    </style>
+</head>
+
+<body>
+    <center>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-center">
+            <a class="navbar-brand" href="#"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="add" style="color: rgb(8, 105, 196); text-align:right;"><b>Home</b></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="up"  style="color: rgb(8, 105, 196);"><b>Upload</b></a>
+                    </li>
+                </ul>
+            </div>
+        
+        
+        </nav>
+        
+        
+    
+</center>
+<nav class="navbar navbar-light bg-light">
+    <div class="container">
+        <form class="form-inline w-100">
+            <input class="form-control mr-sm-2 w-100 text-center" type="search" placeholder="Search" aria-label="Search"
+            style="background-color:mistyrose;  font-size: 20px; border: 2px solid black; " >
+        </form>
+    </div>
+</nav>
+
+<div style="position: relative;">
+    <button type="submit" class="btn btn-success" style="position: absolute; top: 30px; right: 190px; height: 40px; width: 70px;   background-color: antiquewhite;">
+        <a href="add" style=" background-color: antiquewhite; text-decoration: none;">Add</a>
+    </button>
+</div>
+
+
+
+
+
+        <br>
+	<div class="container" style="border: 2px solid white; text-align: justify; height: 50px; 
+    background-color:lightskyblue; border-radius: 10px;">
+		<figure class="text-center">
+  <blockquote class="blockquote">
+    <p style="padding-top: 15px; font-family: 'Aclonica';font-size: 28px; margin-top: -10px; "><b>𝙲𝚘𝚖𝚙𝚊𝚗𝚢 𝙶𝚛𝚘𝚞𝚙 𝙻𝚒𝚜𝚝</b>
+		
+	</p>
+  </blockquote>
+</figure>
+</div>
+<div class="container">
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Sr.No</th>
+      <th scope="col">Name</th>
+      <th scope="col">Department</th>
+      <th scope="col">Salary</th>
+      <th scope="col">Address</th>
+      <th scope="col" colspan="3">Action</th>
+    
+    
+    </tr>
+  </thead>
+  <tbody>
+    <tr th:each="user : ${users}">
+      <th scope="row" th:text="${user.getId()}"></th>
+      <td th:text="${user.getName()}"></td>
+      <td th:text="${user.getDepartment()}"></td>
+      <td th:text="${user.getSalary()}"></td>
+      <td th:text="${user.getAddress()}"></td>
+      <td><a th:href="@{edit/{id}(id=${user.getId()})}">Edit</a></td>
+      <td><a th:href="@{delete/{id}(id=${user.getId()})}">Delete</a></td>
+
+    </tr>
+    
+  </tbody>
+</table>
+</div>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+</html>
